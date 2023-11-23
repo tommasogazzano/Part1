@@ -1,0 +1,45 @@
+const Header = (props) => {
+  console.log(props)
+  return(
+    <div>
+      <h1>{props.Course}</h1>
+    </div>
+  )
+}
+
+const Content = (props) => {
+  console.log(props)
+  return(
+    <div>
+      <p>{props.Part[0].name} {props.Part[0].ex}</p>
+      <p>{props.Part[1].name} {props.Part[1].ex}</p>
+      <p>{props.Part[2].name} {props.Part[2].ex}</p>
+    </div>
+  )
+}
+
+const Total = (props) => {
+  console.log(props)
+  return(
+    <div>
+      <p>Number of Exercies {props.Element[0].ex + props.Element[1].ex + props.Element[2].ex}</p>
+    </div>
+  )
+}
+const App = () => {
+  const course = 'Half Stack application development'
+  const part = [
+    {name: 'Fundamentals of React', ex: 10},
+    {name: 'Using props to pass data', ex: 7},
+    {name: 'State of a component', ex: 14}
+  ]
+ return(
+    <div>
+      <Header Course = {course} />
+      <Content Part = {part}/>
+      <Total Element = {part}/>
+    </div>
+  )
+}
+
+export default App
